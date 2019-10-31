@@ -22,7 +22,7 @@ public class ProdutosController : ControllerBase
     [ResponseCache(Duration=30)]
     [ProducesResponseType((int)HttpStatusCode.OK)]
     [Produces("application/json","application/xml")]
-    public IActionResult ObterTeste()
+    public IActionResult Obter()
     {
         var lista = Repositorio.Obter();
         return Ok(lista);
