@@ -7,7 +7,7 @@ namespace RCN.API.Controllers
 {
 
 [Route("v{version:apiVersion}/[controller]")]
-// [ApiController]
+//  [ApiController]
 public class ProdutosController : ControllerBase
 {
     private readonly IProdutoRepository Repositorio;
@@ -21,8 +21,7 @@ public class ProdutosController : ControllerBase
     [ApiVersion("1.0")]
     [ResponseCache(Duration=30)]
     [ProducesResponseType((int)HttpStatusCode.OK)]
-    [Produces("application/json","application/xml")]
-    public IActionResult Obter()
+    public IActionResult Get()
     {
         var lista = Repositorio.Obter();
         return Ok(lista);
@@ -33,7 +32,7 @@ public class ProdutosController : ControllerBase
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     [ProducesResponseType((int)HttpStatusCode.OK)]
     [Produces("application/json","application/xml")]
-    public IActionResult Obter(int Id)
+    public IActionResult GetPorId(int Id)
     {
     var produto = Repositorio.Obter(Id);
     
@@ -112,7 +111,7 @@ public IActionResult Atualizar ([FromBody]Produto  produto)
     [HttpGet]
     [ApiVersion("3.0")]
     [ProducesResponseType((int)HttpStatusCode.OK)]
-    [Produces("application/json","application/xml")]
+    // [Produces("application/json","application/xml")]
     public IActionResult ObterTodos()
     {
         List<string> lista = new List<string>();

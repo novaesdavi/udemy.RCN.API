@@ -99,7 +99,7 @@ namespace RCN.API
                 foreach (var item in provider.ApiVersionDescriptions)
                 {
                     c.SwaggerEndpoint($"/swagger/{item.GroupName}/swagger.json", item.GroupName);
-                    // c.RoutePrefix = string.Empty;
+                    c.RoutePrefix = string.Empty;
                 }
                 c.RoutePrefix = string.Empty;
             });
