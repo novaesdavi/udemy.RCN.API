@@ -7,7 +7,7 @@ namespace RCN.API.Controllers
 {
 
 [Route("v{version:apiVersion}/[controller]")]
-//  [ApiController]
+  [ApiController]
 public class ProdutosController : ControllerBase
 {
     private readonly IProdutoRepository Repositorio;
